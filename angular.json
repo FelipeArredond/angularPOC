@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/azure-maps-control/dist/atlas.min.css",
               "src/styles.css"
-            ],
-            "scripts": []
+          ],
+          "scripts": [
+              "node_modules/azure-maps-control/dist/atlas.min.js"
+          ]
           },
           "configurations": {
             "production": {
@@ -97,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
