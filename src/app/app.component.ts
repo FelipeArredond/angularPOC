@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, asNativeElements } from '@angular/core';
 import * as L from 'leaflet';
+import { MarkerService } from './marker.service';
 
 @Component({
     selector: 'app-root',
@@ -22,11 +23,13 @@ export class AppComponent implements AfterViewInit{
     });
 
     tiles.addTo(this.map);
+    this.map.on('click', () => console.log("Cick"));
   }
 
-  constructor() { }
+  constructor(private markerService: MarkerService) { }
 
   ngAfterViewInit(): void {
     this.initMap();
+    this.markerService.makeCapitalMarkers(this.map);
   }
 }
