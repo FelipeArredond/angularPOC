@@ -30,5 +30,6 @@ export class AppComponent implements AfterViewInit{
   ngAfterViewInit(): void {
     this.initMap();
     this.markerService.makeCapitalMarkers(this.map);
+    this.markerService.makePolygon(this.map);
   }
 }
